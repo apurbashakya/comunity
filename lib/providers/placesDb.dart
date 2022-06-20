@@ -14,14 +14,14 @@ class PlacesDb with ChangeNotifier {
     return [..._items];
   }
 
-  void addPlace(String pickedtitle,String reviewpage, File pickedimage) {
+  void addPlace(String pickedtitle, String reviewpage, File pickedimage) {
     final newPlace = Place(
         id: DateTime.now().toString(),
         image: FileImage(pickedimage),
         review: reviewpage,
         title: pickedtitle,
-        location: location2
-    );
+        //location: location2
+        );
     _items.add(newPlace);
     notifyListeners();
     DBHelper.insert('user_places', {
@@ -40,13 +40,13 @@ class PlacesDb with ChangeNotifier {
               title: item['title'],
               review: item['review'],
               image: FileImage(item['image']),
-              location: location2
+              //location: location2
               ),
         )
         .toList();
-         
-      print('SAD');
-        //we return the Place
+
+    print('SAD');
+    //we return the Place
     //We have to tranform dataList to list of places
     notifyListeners();
   }

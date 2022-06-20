@@ -74,7 +74,7 @@ class _AddPlaceState extends State<AddPlace> {
                             labelText: "Add the review",
                           ),
                         ),
-                        GFCard(
+                        /*GFCard(
                           content: const Text("Location deatails"),
                           buttonBar: GFButtonBar(
                             children: <Widget>[
@@ -91,11 +91,11 @@ class _AddPlaceState extends State<AddPlace> {
                               ),
                             ],
                           ),
-                        ),
+                        ),*/
                       ],
                     ),
                   ),
-   /*               SmoothStarRating(
+                  /*               SmoothStarRating(
                     rating: rating,
                     isReadOnly: false,
                     size: 40,
@@ -109,7 +109,12 @@ class _AddPlaceState extends State<AddPlace> {
                       // print("rating value dd -> ${value.truncate()}");
                     },
                   ),
-     */           ],
+     */
+                  RaisedButton.icon(
+                      icon: Icon(Icons.abc),
+                      label: Text('ASDFA'),
+                      onPressed: _savePlace)
+                ],
               ),
             ),
           ),
