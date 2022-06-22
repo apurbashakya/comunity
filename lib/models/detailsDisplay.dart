@@ -1,3 +1,4 @@
+import 'package:comunity/helpers/locationHelper.dart';
 import 'package:comunity/widgets/review_input.dart';
 import 'package:http/http.dart';
 import 'dart:io';
@@ -16,7 +17,7 @@ import 'package:flutter/rendering.dart';
 }
 */
 class Place {
-  final String id;
+  final String id; 
   final String title;
   final String review;
   final FileImage image;

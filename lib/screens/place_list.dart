@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'place_add.dart';
 import 'package:provider/provider.dart';
 import './place_add.dart';
-
+import "package:latlong2/latlong.dart" as latLng;
+import 'package:flutter_map/flutter_map.dart';
 class PlacesList extends StatelessWidget {
   const PlacesList({Key? key}) : super(key: key);
 
@@ -36,7 +37,7 @@ class PlacesList extends StatelessWidget {
                   : Consumer<PlacesDb>(
                       //child:Center(
                       child: Text('add some'),
-                      //),
+                      //),as
                       builder: (ctx, placesDb, ch) => placesDb.items.isEmpty
                           ? ch!
                           : ListView.builder(
@@ -46,9 +47,12 @@ class PlacesList extends StatelessWidget {
                                     backgroundImage: placesDb.items[i].image),
                                 title: Text(placesDb.items[i].title),
                                 subtitle: Text(placesDb.items[i].review),
+                                
                               ),
                             ),
+                          
                     ),
-        ));
+        )
+      );
   }
 }

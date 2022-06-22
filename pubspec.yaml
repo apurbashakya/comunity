@@ -45,6 +45,8 @@ dependencies:
   sqflite: ^2.0.2+1
   http: ^0.13.4
   image_picker: ^0.8.5+3
+  flutter_map: ^1.1.0
+  location: ^4.4.0
 
 dev_dependencies:
   flutter_test:

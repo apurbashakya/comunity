@@ -8,6 +8,7 @@ import '../widgets/review_input.dart';
 //import 'package:smooth_star_rating/smooth_star_rating.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:geocoding/geocoding.dart';
+import '../widgets/location_input.dart';
 
 var rating = 3.0;
 
@@ -74,6 +75,10 @@ class _AddPlaceState extends State<AddPlace> {
                             labelText: "Add the review",
                           ),
                         ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        LocationInput(),
                         /*GFCard(
                           content: const Text("Location deatails"),
                           buttonBar: GFButtonBar(
