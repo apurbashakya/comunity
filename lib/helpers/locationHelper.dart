@@ -8,6 +8,6 @@ class LocationHelper {
   static String imageGenerated(double? latitude, double? longitude) {
     print(latitude);
     print(longitude);
-    return "https://api.tomtom.com/map/1/staticimage?key=GDkyA02ZxfGOkoinxIIAAmZ9Ny7lXIgE&zoom=9&center=$longitude,$latitude&format=jpg&layer=basic&style=main&width=1305&height=748&view=Unified&language=en-GB";
-  } //GENERATING IMAGE USING THE URL where we input our longitude and latitude and api
+    return "https://api.tomtom.com/map/1/staticimage?key=GDkyA02ZxfGOkoinxIIAAmZ9Ny7lXIgE&zoom=13&center=$longitude,$latitude&format=jpg&layer=basic&style=main&width=1305&height=748&view=Unified&language=en-GB";
+  } //GENERATING IMAGE USING THE URL where we input our longitude and latitude and api and zoom too
 }

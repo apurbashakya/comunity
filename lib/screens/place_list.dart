@@ -14,7 +14,7 @@ class PlacesList extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('Saloons'),
+          title: Text('Directory'),
           actions: <Widget>[
             IconButton(
                 onPressed: () {
@@ -47,7 +47,7 @@ class PlacesList extends StatelessWidget {
                                     backgroundImage: placesDb.items[i].image),
                                 title: Text(placesDb.items[i].title),
                                 subtitle: Text(placesDb.items[i].review),
-                                
+                                trailing: Text(placesDb.items[i].review),
                               ),
                             ),
                           

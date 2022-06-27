@@ -2,9 +2,13 @@
 //preview of map and button to select in marker in app
 //we point the imageloaction rather than image itself
 import 'dart:ffi';
+import 'package:flutter/services.dart';
 import 'package:location/location.dart';
 import 'package:flutter/material.dart';
 import '../helpers/locationHelper.dart';
+import 'package:comunity/screens/map_location.dart';
+import 'package:comunity/screens/login.dart';
+import 'package:comunity/helpers/getAddress.dart';
 
 class LocationInput extends StatefulWidget {
   const LocationInput({Key? key}) : super(key: key);
@@ -13,13 +17,17 @@ class LocationInput extends StatefulWidget {
   State<LocationInput> createState() => _LocationInputState();
 }
 
+
+
+
 class _LocationInputState extends State<LocationInput> {
   late String _locationUrl = 'https://picsum.photos/250?image=9';
   Future getLocationInput() async {
-    final locationInfo = await Location()
-        .getLocation(); //asks for current location initally user permisisons
+    final locationInfo = await Location().getLocation();
+    //asks for current location initally user permisisons
     final StaticImageUrl = LocationHelper.imageGenerated(
-         locationInfo.latitude, locationInfo.longitude);
+        locationInfo.latitude, locationInfo.longitude);
+
     setState(() {
       _locationUrl = StaticImageUrl;
     });
@@ -30,19 +38,36 @@ class _LocationInputState extends State<LocationInput> {
     return Center(
         child: Column(
       children: <Widget>[
-        TextButton.icon(
-            onPressed: getLocationInput,
-            icon: Icon(Icons.location_on_rounded),
-            label: Text(" Current Location")),
+        Row(
+          children: [
+            TextButton.icon(
+                onPressed: getLocationInput,
+                icon: Icon(Icons.location_on_rounded),
+                label: Text(" Current Location")),
+          ],
+        ),
+        Row(
+          children: [
+            TextButton.icon(
+                onPressed: () async {
+                  await Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MapLocation()));
+                },
+                icon: Icon(Icons.maps_home_work),
+                label: Text("Select location on map")),
+          ],
+        ),
         Container(
           height: 180,
           width: double.infinity,
           child: _locationUrl == Null
               ? Text('add location')
-              : Image.network(_locationUrl,
+              : Image.network(
+                  _locationUrl,
                   width: double.infinity,
-                  fit: BoxFit.cover), //to occupy full length
-        )
+                  fit: BoxFit.cover,
+                ), //to occupy full length
+        ),
       ],
     ));
   }

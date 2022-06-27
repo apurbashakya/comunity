@@ -40,6 +40,7 @@ class PlacesDb with ChangeNotifier {
               title: item['title'],
               review: item['review'],
               image: FileImage(item['image']),
+              
               //location: location2
               ),
         )

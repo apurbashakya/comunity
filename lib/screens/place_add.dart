@@ -42,7 +42,7 @@ class _AddPlaceState extends State<AddPlace> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add a new hairSaloon'),
+        title: const Text('Add a directory'),
       ),
       body: Column(
         // we romeved main axis alinment because we useed exapnded which will enable first child to take all height it can get, but will leaved"Add place button the required space it needs" , mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -116,8 +116,8 @@ class _AddPlaceState extends State<AddPlace> {
                   ),
      */
                   RaisedButton.icon(
-                      icon: Icon(Icons.abc),
-                      label: Text('ASDFA'),
+                      icon: Icon(Icons.supervised_user_circle),
+                      label: Text('SUBMIT'),
                       onPressed: _savePlace)
                 ],
               ),
