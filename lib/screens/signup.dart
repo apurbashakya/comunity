@@ -16,41 +16,45 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
       // ignore: unnecessary_new
-      body: new Form(
-        key: _formKey,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TextFormField(
-              onChanged: (value) {
-                email = value;
-              },
-              decoration: InputDecoration(
-                hintText: 'Enter your email',
-                labelText: 'Email ID',
-              ),
-            ),
-            TextFormField(
-              onChanged: (value) {
-                password = value;
-              },
-              decoration: InputDecoration(
-                hintText: 'Enter your Password',
-                labelText: 'Password',
-              ),
-            ),
-            Center(
-              child: ElevatedButton(
-                child: Text('submit'),
-                onPressed: () async {
-                  UserCredential authResult;
-                  authResult = await FirebaseAuth.instance
-                      .createUserWithEmailAndPassword(
-                          email: email, password: password);
+      appBar: AppBar(title: Text('Sign Up'),),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 5),
+        child: new Form(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TextFormField(
+                onChanged: (value) {
+                  email = value;
                 },
+                decoration: InputDecoration(
+                  hintText: 'Enter your email',
+                  labelText: 'Email ID',
+                ),
               ),
-            ),
-          ],
+              TextFormField(
+                onChanged: (value) {
+                  password = value;
+                },
+                decoration: InputDecoration(
+                  hintText: 'Enter your Password',
+                  labelText: 'Password',
+                ),
+              ),
+              Center(
+                child: ElevatedButton(
+                  child: Text('submit'),
+                  onPressed: () async {
+                    UserCredential authResult;
+                    authResult = await FirebaseAuth.instance
+                        .createUserWithEmailAndPassword(
+                            email: email, password: password);
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

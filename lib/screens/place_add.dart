@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:comunity/screens/place_list.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +10,8 @@ import '../widgets/review_input.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:geocoding/geocoding.dart';
 import '../widgets/location_input.dart';
+import 'place_list.dart';
+
 
 var rating = 3.0;
 
@@ -43,6 +46,7 @@ class _AddPlaceState extends State<AddPlace> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Add a directory'),
+        backgroundColor: Colors.redAccent,
       ),
       body: Column(
         // we romeved main axis alinment because we useed exapnded which will enable first child to take all height it can get, but will leaved"Add place button the required space it needs" , mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -57,10 +61,13 @@ class _AddPlaceState extends State<AddPlace> {
                       // ignore: prefer_const_literals_to_create_immutable
                       children: [
                         TextField(
-                          decoration: const InputDecoration(labelText: 'Title'),
+                          
+                          decoration: const InputDecoration(labelText: 'Title', ),
                           controller: _titleController,
                         ), //to store our preview and take picture
-                        ImageInput(_selectImage),
+                       
+                        
+                         ImageInput(_selectImage),
                         TextField(
                           textAlignVertical: TextAlignVertical.top,
                           controller: _reviewController,
@@ -69,7 +76,7 @@ class _AddPlaceState extends State<AddPlace> {
                             contentPadding: EdgeInsets.symmetric(vertical: 40),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Colors.blueAccent,
+                                color: Colors.black,
                               ),
                             ),
                             labelText: "Add the review",
@@ -116,9 +123,10 @@ class _AddPlaceState extends State<AddPlace> {
                   ),
      */
                   RaisedButton.icon(
-                      icon: Icon(Icons.supervised_user_circle),
-                      label: Text('SUBMIT'),
-                      onPressed: _savePlace)
+                    icon: Icon(Icons.supervised_user_circle),
+                    label: Text('SUBMIT'),
+                    onPressed: _savePlace ,
+                  )
                 ],
               ),
             ),

@@ -17,11 +17,9 @@ class LocationInput extends StatefulWidget {
   State<LocationInput> createState() => _LocationInputState();
 }
 
-
-
-
 class _LocationInputState extends State<LocationInput> {
-  late String _locationUrl = 'https://picsum.photos/250?image=9';
+  late String _locationUrl =
+      "https://cdn.barbdelollis.com/wp-content/uploads/plain-black-screen-hdblackwallpaper_6159.jpg";
   Future getLocationInput() async {
     final locationInfo = await Location().getLocation();
     //asks for current location initally user permisisons

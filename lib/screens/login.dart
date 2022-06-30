@@ -17,7 +17,6 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[100],
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -26,7 +25,7 @@ class _LoginState extends State<Login> {
             children: [
               //for multiple padding
               //heading
-              SizedBox(height: 30),
+              SizedBox(height: 40),
               ClipRRect(
                 // ignore: sort_child_properties_last
                 borderRadius: BorderRadius.circular(150),

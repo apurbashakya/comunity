@@ -36,7 +36,80 @@ class PlacesList extends StatelessWidget {
                     )
                   : Consumer<PlacesDb>(
                       //child:Center(
-                      child: Text('add some'),
+                      child: Center(
+                child: Card(
+                  elevation: 50,
+                  shadowColor: Colors.black,
+                  color: Colors.red[100],
+                  child: SizedBox(
+                    width: 300,
+                    height: 300,
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'lib/addd.png',
+                            width: 200,
+                            height: 200,
+                          ),
+ //SizedBo
+                          Text(
+                            'Empty Directory',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.red[900],
+                              fontWeight: FontWeight.w500,
+                            ), //Textstyle
+                          ), //Text
+                          //Text
+                          //SizedBox
+                          SizedBox(
+                            width: 100,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => AddPlace()),
+                                );
+                              },
+                              style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all(Colors.red)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(4),
+                                child: Row(
+                                  children: const [
+                                    Icon(Icons.touch_app),
+                                    Text('ADD')
+                                  ],
+                                ),
+                              ),
+                            ),
+                            // RaisedButton is deprecated and should not be used
+                            // Use ElevatedButton instead
+
+                            // child: RaisedButton(
+                            //   onPressed: () => null,
+                            //   color: Colors.green,
+                            //   child: Padding(
+                            //     padding: const EdgeInsets.all(4.0),
+                            //     child: Row(
+                            //       children: const [
+                            //         Icon(Icons.touch_app),
+                            //         Text('Visit'),
+                            //       ],
+                            //     ), //Row
+                            //   ), //Padding
+                            // ), //RaisedButton
+                          ) //SizedBox
+                        ],
+                      ), //Column
+                    ), //Padding
+                  ), //SizedBox
+                ),
+              ),
                       //),as
                       builder: (ctx, placesDb, ch) => placesDb.items.isEmpty
                           ? ch!
@@ -47,7 +120,6 @@ class PlacesList extends StatelessWidget {
                                     backgroundImage: placesDb.items[i].image),
                                 title: Text(placesDb.items[i].title),
                                 subtitle: Text(placesDb.items[i].review),
-                                trailing: Text(placesDb.items[i].review),
                               ),
                             ),
                           

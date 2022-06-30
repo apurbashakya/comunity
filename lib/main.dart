@@ -10,6 +10,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'screens/place_add.dart';
 import "package:latlong2/latlong.dart" as latLng;
 import 'widgets/location_input.dart';
+import 'screens/map_location.dart';
+
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -27,9 +29,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
           title: 'Flutter Demo',
           theme: ThemeData(
-            primarySwatch: Colors.blue,
+            primarySwatch: Colors.red,
           ),
-          home: const Login()),
+          home: Login()),
     );
   }
 }
